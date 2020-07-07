@@ -21,8 +21,6 @@ jobs:
           command: yarn install
       - save_cache:
           key: yarn-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
-          paths:
-            - _assets/yarn
       - run:
           name: run build
           command: npm run deploy
