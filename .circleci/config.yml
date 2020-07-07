@@ -28,7 +28,7 @@ jobs:
           command: npm run deploy
 workflows:
   version: 2
-  test_and_deploy:
+  deploy:
     jobs:
       - deploy:
           filters:
