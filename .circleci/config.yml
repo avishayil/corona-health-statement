@@ -1,8 +1,8 @@
-version: 2.1
-orbs:
-  node: circleci/node@1.1.6
+version: 2
 jobs:
   deploy:
+    docker:
+      - image: circleci/node:12.18
     steps:
       - add_ssh_keys:
           fingerprints:
