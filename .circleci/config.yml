@@ -1,0 +1,36 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1.6
+jobs:
+  deploy:
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "ab:12:f9:2e:e6:04:11:c7:75:9c:46:d4:7a:d2:dd:5a"
+      - checkout
+      - run:
+          name: install yarn
+          command: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - restore_cache:
+          keys:
+            - yarn-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+            - yarn-cache-v1-{{ arch }}-{{ .Branch }}
+            - yarn-cache-v1
+      - run:
+          name: install npm dependencies
+          command: yarn install
+      - save_cache:
+          key: yarn-cache-v1-{{ arch }}-{{ .Branch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - _assets/yarn
+      - run:
+          name: run build
+          command: npm run deploy
+workflows:
+  version: 2
+  test_and_deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
