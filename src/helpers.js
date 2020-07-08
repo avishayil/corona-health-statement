@@ -1,4 +1,7 @@
 import htmlToImage from 'html-to-image';
+import { createBrowserHistory } from 'history';
+
+const history = createBrowserHistory();
 
 function handleSave() {
   const node = document.getElementById('toSave');
@@ -14,6 +17,12 @@ function handleSave() {
     });
 }
 
+function createLink(params) {
+  const queryString = Object.keys(params).map((key) => `${key}=${params[key]}`).join('&');
+  history.push({ search: `?${queryString}` });
+}
+
 export default {
   handleSave,
+  createLink,
 };

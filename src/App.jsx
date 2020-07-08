@@ -25,7 +25,7 @@ class App extends PureComponent {
             <div className="container" id="toSave">
               <components.Title />
               <components.DetailsForm />
-              <components.SignPad setRef={this.setSignPadRef}/>
+              <components.SignPad setRef={this.setSignPadRef} />
               <components.Clarifications />
             </div>
             <div className="container">
