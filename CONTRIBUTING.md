@@ -28,11 +28,11 @@ The built-in pre-commit hooks verify that your commit message matches this forma
 
 ### Linting and tests
 
-We use `typescript` for type checking, `eslint` for linting and formatting the code, and `jest` for testing. Our pre-commit hooks verify that the linter and tests pass when commiting. You can also run the following commands manually:
+We use `eslint` for linting and formatting the code, and `jest` for testing (unimplemented). Our pre-commit hooks verify that the linter and tests pass when commiting. You can also run the following commands manually:
 
 * `yarn typescript`: type-check files with `tsc`.
 * `yarn lint`: lint files with `eslint`.
-* `yarn test`: run unit tests with `jest`.
+* `yarn test`: run unit tests with `jest` - Currently unimplemented, See [#15](https://github.com/avishayil/corona-health-statement/issues/15).
 
 ### Sending a pull request
 

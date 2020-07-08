@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { updateChildName, updateChildId, updateParentName, updateParentId } from '../actions'
 import {
   Form, Row, Col,
 } from 'react-bootstrap';
@@ -7,7 +9,7 @@ import {
 } from 'react-bootstrap-icons';
 import * as qs from 'query-string';
 
-export default function DetailsForm() {
+const DetailsForm = props => {
   const query = qs.parse(window.location.search);
   return (
     <div>
@@ -15,13 +17,13 @@ export default function DetailsForm() {
         <Form.Group as={Row} controlId="frmChildName">
           <Col>
             <Form.Label>שם התלמיד/ה</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: פלוני אלמוני" defaultValue={query.childName} />
+            <Form.Control type="text" placeholder="לדוגמא: פלוני אלמוני" defaultValue={query.childName} onChange={event => props.updateChildName(event.target.value)} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="frmChildID">
           <Col>
             <Form.Label>מס׳ תעודת זהות</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: 301234567" defaultValue={query.childId} />
+            <Form.Control type="text" placeholder="לדוגמא: 301234567" defaultValue={query.childId} onChange={event => props.updateChildId(event.target.value)} />
           </Col>
         </Form.Group>
         <Row>
@@ -54,13 +56,13 @@ export default function DetailsForm() {
         <Form.Group style={{ marginTop: 20 }} as={Row} controlId="frmParentName">
           <Col>
             <Form.Label>שם ההורה</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: אבא של פלוני" defaultValue={query.parentName} />
+            <Form.Control type="text" placeholder="לדוגמא: אבא של פלוני" defaultValue={query.parentName} onChange={event => props.updateParentName(event.target.value)} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="frmParentId">
           <Col>
             <Form.Label>מס׳ תעודת זהות</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: 301234567" defaultValue={query.parentId} />
+            <Form.Control type="text" placeholder="לדוגמא: 301234567" defaultValue={query.parentId} onChange={event => props.updateParentId(event.target.value)} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="frmDate">
@@ -73,3 +75,14 @@ export default function DetailsForm() {
     </div>
   );
 }
+
+const mapStateToProps = state => state;
+
+const mapDispatchToProps = dispatch => ({
+  updateChildName: text => dispatch(updateChildName(text)),
+  updateChildId: text => dispatch(updateChildId(text)),
+  updateParentName: text => dispatch(updateParentName(text)),
+  updateParentId: text => dispatch(updateParentId(text)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsForm)
