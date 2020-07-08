@@ -15,13 +15,13 @@ export default function DetailsForm() {
         <Form.Group as={Row} controlId="frmChildName">
           <Col>
             <Form.Label>שם התלמיד/ה</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: פלוני אלמוני" value={query.childName} />
+            <Form.Control type="text" placeholder="לדוגמא: פלוני אלמוני" defaultValue={query.childName} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="frmChildID">
           <Col>
             <Form.Label>מס׳ תעודת זהות</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: 301234567" value={query.childId} />
+            <Form.Control type="text" placeholder="לדוגמא: 301234567" defaultValue={query.childId} />
           </Col>
         </Form.Group>
         <Row>
@@ -54,13 +54,13 @@ export default function DetailsForm() {
         <Form.Group style={{ marginTop: 20 }} as={Row} controlId="frmParentName">
           <Col>
             <Form.Label>שם ההורה</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: אבא של פלוני" value={query.parentName} />
+            <Form.Control type="text" placeholder="לדוגמא: אבא של פלוני" defaultValue={query.parentName} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="frmParentId">
           <Col>
             <Form.Label>מס׳ תעודת זהות</Form.Label>
-            <Form.Control type="text" placeholder="לדוגמא: 301234567" value={query.parentId} />
+            <Form.Control type="text" placeholder="לדוגמא: 301234567" defaultValue={query.parentId} />
           </Col>
         </Form.Group>
         <Form.Group as={Row} controlId="frmDate">
