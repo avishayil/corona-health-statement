@@ -1,4 +1,4 @@
-# Contributing to React Native Restart
+# Contributing to Corona Health Statement
 
 ## Development Process
 
