@@ -1,8 +1,12 @@
+import * as qs from 'query-string';
+
+const query = qs.parse(window.location.search);
+
 const rootReducer = (state = {
-  childName: '',
-  childId: '',
-  parentName: '',
-  parentId: '',
+  childName: query.childName,
+  childId: query.childId,
+  parentName: query.parentName,
+  parentId: query.parentId,
 }, action) => {
   switch (action.type) {
     case 'UPDATE_CHILD_NAME':
