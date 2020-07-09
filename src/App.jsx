@@ -14,7 +14,7 @@ class App extends PureComponent {
   componentDidMount() {
     this.isSafari = is.safari();
     if (this.isSafari) {
-      helpers.notify("התגלה דפדפן ספארי. אנא שלח את העמוד להדפסה ובחר באפשרות שמירה כ-PDF")
+      helpers.notifyInfo("התגלה דפדפן ספארי. אנא שלח את העמוד להדפסה ובחר באפשרות שמירה כ-PDF")
     }
   }
 
