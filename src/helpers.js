@@ -4,6 +4,24 @@ import { toast } from 'react-toastify';
 
 const history = createBrowserHistory();
 
+function notifyInfo(text) {
+  toast.info(text, {
+    autoClose: 10000, hideProgressBar: true, closeOnClick: true, rtl: true, position: 'top-center',
+  });
+}
+
+function notifySuccess(text) {
+  toast.success(text, {
+    autoClose: 10000, hideProgressBar: true, closeOnClick: true, rtl: true, position: 'top-center',
+  });
+}
+
+function notifyError(text) {
+  toast.error(text, {
+    autoClose: 10000, hideProgressBar: true, closeOnClick: true, rtl: true, position: 'top-center',
+  });
+}
+
 function handleSave() {
   const node = document.getElementById('toSave');
   htmlToImage.toPng(node)
@@ -14,25 +32,27 @@ function handleSave() {
       a.click();
     })
     .catch((error) => {
-      console.error('oops, something went wrong!', error); // eslint-disable-line no-console
+      notifyError('משהו השתבש, אנא נסו שנית לשמור את התמונה');
+      console.log('oops, something went wrong!', error); // eslint-disable-line no-console
     });
 }
 
-function notify(text) {
-  toast.info(text, {
-    autoClose: false, hideProgressBar: true, closeOnClick: true, rtl: true, position: 'top-center',
-  });
-}
-
 function createLink(params) {
-  const queryString = Object.keys(params).map((key) => `${key}=${params[key]}`).join('&');
-  history.push({ search: `?${queryString}` });
-  navigator.clipboard.writeText(window.location.href);
-  notify('הקישור הועתק ללוח, מומלץ להוסיף את הקישור למועדפים או לשתף אותו עם מי שצריך לשימוש חוזר');
+  const isEmpty = !Object.values(params).every((x) => (x !== undefined && x !== '' && x !== 'undefined'));
+  if (!isEmpty) {
+    const queryString = Object.keys(params).map((key) => `${key}=${params[key]}`).join('&');
+    history.push({ search: `?${queryString}` });
+    navigator.clipboard.writeText(window.location.href);
+    notifyInfo('הקישור הועתק ללוח, מומלץ להוסיף את הקישור למועדפים או לשתף אותו עם מי שצריך לשימוש חוזר');
+  } else {
+    notifyError('אחד מהפרטים ריק. ניתן ליצור קישור לשימוש חוזר רק כאשר כל פרטי הטופס, פרט לתאריך ולחתימה, מלאים');
+  }
 }
 
 export default {
   handleSave,
   createLink,
-  notify,
+  notifyInfo,
+  notifySuccess,
+  notifyError,
 };
