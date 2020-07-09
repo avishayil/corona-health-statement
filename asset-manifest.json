@@ -1,23 +1,26 @@
 {
   "files": {
     "main.css": "/corona-health-statement/static/css/main.29ddc5c4.chunk.css",
-    "main.js": "/corona-health-statement/static/js/main.030991b6.chunk.js",
-    "main.js.map": "/corona-health-statement/static/js/main.030991b6.chunk.js.map",
+    "main.js": "/corona-health-statement/static/js/main.8eba4e41.chunk.js",
+    "main.js.map": "/corona-health-statement/static/js/main.8eba4e41.chunk.js.map",
     "runtime-main.js": "/corona-health-statement/static/js/runtime-main.0bfbb121.js",
     "runtime-main.js.map": "/corona-health-statement/static/js/runtime-main.0bfbb121.js.map",
-    "static/js/2.93037bff.chunk.js": "/corona-health-statement/static/js/2.93037bff.chunk.js",
-    "static/js/2.93037bff.chunk.js.map": "/corona-health-statement/static/js/2.93037bff.chunk.js.map",
+    "static/css/2.d34346ea.chunk.css": "/corona-health-statement/static/css/2.d34346ea.chunk.css",
+    "static/js/2.162f3987.chunk.js": "/corona-health-statement/static/js/2.162f3987.chunk.js",
+    "static/js/2.162f3987.chunk.js.map": "/corona-health-statement/static/js/2.162f3987.chunk.js.map",
     "index.html": "/corona-health-statement/index.html",
-    "precache-manifest.c01f30d8b6737b5af445166bd0747f87.js": "/corona-health-statement/precache-manifest.c01f30d8b6737b5af445166bd0747f87.js",
+    "precache-manifest.e155d1ed9ca2f053db67f50e51102cef.js": "/corona-health-statement/precache-manifest.e155d1ed9ca2f053db67f50e51102cef.js",
     "service-worker.js": "/corona-health-statement/service-worker.js",
+    "static/css/2.d34346ea.chunk.css.map": "/corona-health-statement/static/css/2.d34346ea.chunk.css.map",
     "static/css/main.29ddc5c4.chunk.css.map": "/corona-health-statement/static/css/main.29ddc5c4.chunk.css.map",
-    "static/js/2.93037bff.chunk.js.LICENSE.txt": "/corona-health-statement/static/js/2.93037bff.chunk.js.LICENSE.txt",
+    "static/js/2.162f3987.chunk.js.LICENSE.txt": "/corona-health-statement/static/js/2.162f3987.chunk.js.LICENSE.txt",
     "static/media/Alef-Regular.ttf": "/corona-health-statement/static/media/Alef-Regular.c5d54929.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.0bfbb121.js",
-    "static/js/2.93037bff.chunk.js",
+    "static/css/2.d34346ea.chunk.css",
+    "static/js/2.162f3987.chunk.js",
     "static/css/main.29ddc5c4.chunk.css",
-    "static/js/main.030991b6.chunk.js"
+    "static/js/main.8eba4e41.chunk.js"
   ]
 }
