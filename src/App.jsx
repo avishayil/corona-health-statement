@@ -5,6 +5,7 @@ import is from 'is_js';
 import { ToastContainer } from 'react-toastify';
 import { default as helpers } from './helpers'
 import 'react-toastify/dist/ReactToastify.css';
+import Banner from 'react-js-banner';
 
 class App extends PureComponent {
 
@@ -20,22 +21,27 @@ class App extends PureComponent {
   render() {
     return (
       <DirectionProvider direction={DIRECTIONS.RTL}>
-        <div style={{
-          display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
-        }}
-        >
-          <section className="section">
-            <div className="container" id="toSave">
-              <components.Title />
-              <components.DetailsForm />
-              <components.SignPad setRef={this.setSignPadRef} />
-              <components.Clarifications />
-            </div>
-            <div className="container">
-              <components.Footer isSafari={this.isSafari} clear={() => this.signPad.instance.clear()} />
-            </div>
-          </section>
-          <ToastContainer />
+        <div>
+          <Banner
+            title="חדש! כפתור ״צור קישור קבוע״ להוספה למועדפים, הפרטים יישמרו בדפדפן לשימוש חוזר"
+            css={{ color: "#FFF", backgroundColor: "green" }}
+          />
+          <div style={{
+            display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',
+          }}
+          >
+            <section className="section">
+              <div className="container" id="toSave">
+                <components.Title />
+                <components.DetailsForm />
+                <components.SignPad setRef={this.setSignPadRef} />
+              </div>
+              <div className="container">
+                <components.Footer isSafari={this.isSafari} clear={() => this.signPad.instance.clear()} />
+              </div>
+            </section>
+            <ToastContainer />
+          </div>
         </div>
       </DirectionProvider>
     );
