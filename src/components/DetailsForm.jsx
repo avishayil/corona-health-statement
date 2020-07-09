@@ -50,7 +50,12 @@ const DetailsForm = props => {
             למיטב ידיעתי ילד/תי לא היה/הייתה במגע קרוב עם חולה קורונה בשבועיים האחרונים
           </Col>
         </Row>
-
+        <Row>
+          <Col>
+            {' '}
+            <i>* למעט שיעול או קושי בנשימה הנובע ממצב כרוני כגון אסטמה או אלרגיה אחרת</i>
+          </Col>
+        </Row>
         <Form.Group style={{ marginTop: 20 }} as={Row} controlId="frmParentName">
           <Col>
             <Form.Label>שם ההורה</Form.Label>
