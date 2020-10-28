@@ -51,7 +51,6 @@ const DetailsForm = props => {
           </Col>
         </Row>
         <Row>
-        <Row>
           <Col>
             <CheckCircle />
             {' '}
